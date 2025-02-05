@@ -8,3 +8,7 @@ npx storybook@latest init
 # run storybook
 npm run storybook 
 This should open Storybook in your default browser (http://localhost:6006/)
+
+# storybook introduction
+please open this link
+https://www.notion.so/Introduction-to-Storybook-in-Angular-and-how-install-it-18ca130ff27480199242ed5637d4538f?pvs=4
