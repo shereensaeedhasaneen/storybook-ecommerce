@@ -1,0 +1,12 @@
+<div class="product-card">
+    @if (offerLabel) {
+        <div class="offer-pill">
+            {{ offerLabel }}
+          </div>
+    }
+    <img [src]="image" alt="Product Image" class="product-image">
+    <h3>{{ title }}</h3>
+    <p>{{ price | currency }}</p>
+    <button (click)="onAddToCart()">Add to Cart</button>
+  </div>
+  
