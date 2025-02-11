@@ -293,7 +293,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<p>button works!</p>\r\n<button [ngClass]=\"primary ? 'primary' : 'secondary'\" >\r\n    {{ label }}\r\n  </button>\r\n  "
+            "templateData": "<p>button works!</p>\r\n<button [ngClass]=\"primary ? 'primary' : 'secondary'\" [ngStyle]=\"{ backgroundColor: backgroundColor }\">\r\n    {{ label }}\r\n  </button>\r\n  "
         },
         {
             "name": "HeaderComponent",
@@ -474,6 +474,97 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "ProductCardComponent",
+            "id": "component-ProductCardComponent-5c04d0186ec2fca37772f67f5085d544e531d00324b066f3d7746554c7a85530feab539e5c304728ff5394b89f07d7c85dc0cff9343a98cc3fe3db4b05d8727b",
+            "file": "src/app/components/product-card/product-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-product-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./product-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "image",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "price",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "addToCart",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onAddToCart",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CurrencyPipe",
+                    "type": "pipe"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CurrencyPipe } from '@angular/common';\r\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-product-card',\r\n  imports: [CurrencyPipe],\r\n  templateUrl: './product-card.component.html',\r\n  styleUrl: './product-card.component.scss'\r\n})\r\nexport class ProductCardComponent {\r\n  @Input() title: string = '';\r\n  @Input() price: number = 0;\r\n  @Input() image: string = '';\r\n  @Output() addToCart = new EventEmitter<void>();\r\n\r\n  onAddToCart() {\r\n    this.addToCart.emit();\r\n  }\r\n}\r\n",
+            "styleUrl": "./product-card.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"product-card\">\r\n    <img [src]=\"image\" alt=\"Product Image\" class=\"product-image\">\r\n    <h3>{{ title }}</h3>\r\n    <p>{{ price | currency }}</p>\r\n    <button (click)=\"onAddToCart()\">Add to Cart</button>\r\n  </div>\r\n  "
         }
     ],
     "modules": [],
@@ -705,7 +796,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 11,
+        "count": 10,
         "status": "low",
         "files": [
             {
@@ -764,6 +855,15 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/product-card/product-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
