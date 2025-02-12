@@ -31,7 +31,137 @@
     "guards": [],
     "interceptors": [],
     "classes": [],
-    "directives": [],
+    "directives": [
+        {
+            "name": "HighlightDirective",
+            "id": "directive-HighlightDirective-3b84d3924d905e19e553501028634015e8bba0f79f2d204561c24e52322e1e9e2b762fb50a6d207e8c2b9b5ddb632208f39b97288d239a6b5bfa9ab71a623c97",
+            "file": "src/app/directives/highlight.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';\r\n\r\n@Directive({\r\n  selector: '[appHighlight]'\r\n})\r\nexport class HighlightDirective {\r\n\r\n  @Input() highlightColor: string = 'yellow';\r\n\r\n  constructor(private el: ElementRef, private renderer: Renderer2) {}\r\n\r\n  @HostListener('mouseenter') onMouseEnter() {\r\n    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.highlightColor);\r\n  }\r\n\r\n  @HostListener('mouseleave') onMouseLeave() {\r\n    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'transparent');\r\n  }\r\n\r\n}\r\n",
+            "selector": "[appHighlight]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "highlightColor",
+                    "defaultValue": "'yellow'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "mouseenter",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onMouseEnter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "onMouseLeave",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "extends": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "components": [
         {
             "name": "AppComponent",
@@ -477,7 +607,7 @@
         },
         {
             "name": "ProductCardComponent",
-            "id": "component-ProductCardComponent-5c04d0186ec2fca37772f67f5085d544e531d00324b066f3d7746554c7a85530feab539e5c304728ff5394b89f07d7c85dc0cff9343a98cc3fe3db4b05d8727b",
+            "id": "component-ProductCardComponent-fbaf1db4cbf2993d0a3ef45169993c2b9766af27835889a6cab9f8d958f1f3ca78995544000d3814704323b789afe9d6dce3898a1837c9e9344dae8541a67810",
             "file": "src/app/components/product-card/product-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -494,11 +624,28 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "highlightColor",
+                    "defaultValue": "'yellow'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "image",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "offerLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -507,7 +654,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "number",
                     "decorators": []
                 },
@@ -516,7 +663,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 }
@@ -527,7 +674,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 17,
                     "type": "EventEmitter"
                 }
             ],
@@ -539,7 +686,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -553,18 +700,22 @@
                 {
                     "name": "CurrencyPipe",
                     "type": "pipe"
+                },
+                {
+                    "name": "HighlightDirective",
+                    "type": "directive"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CurrencyPipe } from '@angular/common';\r\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-product-card',\r\n  imports: [CurrencyPipe],\r\n  templateUrl: './product-card.component.html',\r\n  styleUrl: './product-card.component.scss'\r\n})\r\nexport class ProductCardComponent {\r\n  @Input() title: string = '';\r\n  @Input() price: number = 0;\r\n  @Input() image: string = '';\r\n  @Output() addToCart = new EventEmitter<void>();\r\n\r\n  onAddToCart() {\r\n    this.addToCart.emit();\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CurrencyPipe } from '@angular/common';\r\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { HighlightDirective } from '../../directives/highlight.directive';\r\n\r\n@Component({\r\n  selector: 'app-product-card',\r\n  imports: [CurrencyPipe,HighlightDirective],\r\n  templateUrl: './product-card.component.html',\r\n  styleUrl: './product-card.component.scss'\r\n})\r\nexport class ProductCardComponent {\r\n  @Input() title: string = '';\r\n  @Input() price: number = 0;\r\n  @Input() image: string = '';\r\n  @Input() offerLabel?: string;  \r\n  @Input() highlightColor: string = 'yellow';\r\n  @Output() addToCart = new EventEmitter<void>();\r\n\r\n  onAddToCart() {\r\n    this.addToCart.emit();\r\n  }\r\n}\r\n",
             "styleUrl": "./product-card.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"product-card\">\r\n    <img [src]=\"image\" alt=\"Product Image\" class=\"product-image\">\r\n    <h3>{{ title }}</h3>\r\n    <p>{{ price | currency }}</p>\r\n    <button (click)=\"onAddToCart()\">Add to Cart</button>\r\n  </div>\r\n  "
+            "templateData": "<div class=\"product-card\" appHighlight [highlightColor]=\"highlightColor\">\r\n    @if (offerLabel) {\r\n        <div class=\"offer-pill\">\r\n            {{ offerLabel }}\r\n          </div>\r\n    }\r\n    <img [src]=\"image\" alt=\"Product Image\" class=\"product-image\">\r\n    <h3>{{ title }}</h3>\r\n    <p>{{ price | currency }}</p>\r\n    <button (click)=\"onAddToCart()\">Add to Cart</button>\r\n  </div>\r\n  "
         }
     ],
     "modules": [],
@@ -863,7 +1014,16 @@
                 "linktype": "component",
                 "name": "ProductCardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/directives/highlight.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "HighlightDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
