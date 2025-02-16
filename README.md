@@ -21,3 +21,6 @@ https://www.notion.so/3-Using-Directives-in-Storybook-198a130ff27480f28a5fcc4e55
 
 # using Pipes in storybook
 https://www.notion.so/4-using-pipes-in-storybook-198a130ff274805aa2d4fe64aa5a9514?pvs=4
+
+# TODO list
+https://www.notion.so/5-TODO-LIST-Exercise-19ca130ff27480899e2effaee8efc19f?pvs=4
