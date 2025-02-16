@@ -1,0 +1,29 @@
+<!-- <div class="task-list">
+    @for (task of tasks; track task.id) {
+        <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="onToggleTask(task.id)"/>
+        <span [class.completed]="task.completed">{{ task.title }}</span>
+        <button (click)="onDeleteTask(task.id)">❌</button>
+      } @empty {
+      <h2>There are no Task Today 👏✔.</h2>
+      }
+  </div> -->
+  
+
+  <div class="task-list">
+    <h2>ToDo List</h2>
+    <ul>
+        @for (task of tasks; track task.id) {
+            <li>
+                <span class="title" [class.completed]="task.completed">{{ task.title }}</span>
+                <span class="checkmark" [class.completed]="task.completed">✔</span>
+            </li>
+        }
+        @empty {
+            <h2 class="empty-task">There are no Task Today 👏✔.</h2>
+            }
+    </ul>
+    
+  </div>
